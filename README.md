@@ -9,11 +9,25 @@ Mysql
 ## Setup
 ```
 bundle install
-cp config/database.yml.example config/database.yml
+config/database.yml
 rake db:setup
 ```
 
 ## TO.DO.
+
+####Devise
 ```
-gem 'pry-debbuger' - check
+Some setup you must do manually if you haven't yet:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+     In production, :host should be set to the actual host of your application.
+
+  5. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
 ```
