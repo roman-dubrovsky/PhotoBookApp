@@ -3,11 +3,12 @@
 ## Enviroment
 ```
 Ruby 2.1.3
-Mysql
+MySql
 ```
 
 ## Setup
 ```
+git clone https://github.com/roman-dubrovsky/PhotoBookApp
 bundle install
 config/database.yml
 rake db:setup
