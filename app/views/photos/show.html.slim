@@ -1,0 +1,17 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @photo.title
+p
+  -unless @photo.file_url.nil?
+    = image_tag @photo.file_url
+  -else
+    | Not found photo
+p
+  strong User:
+  = @photo.user.email
+
+= link_to 'Edit', edit_photo_path(@photo)
+'|
+= link_to 'Back', photos_path

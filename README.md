@@ -11,6 +11,7 @@ MySql
 git clone https://github.com/roman-dubrovsky/PhotoBookApp
 bundle install
 config/database.yml
+cp config/cloudinary.yml.example config/cloudinary.yml
 rake db:setup
 ```
 

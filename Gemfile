@@ -16,3 +16,5 @@ gem 'pry-rails'
 
 gem 'devise', '3.4.0'
 gem 'slim-rails'
+gem 'carrierwave'
+gem 'cloudinary'
