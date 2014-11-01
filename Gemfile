@@ -13,7 +13,6 @@ gem 'spring',        group: :development
 
 gem 'pry'
 gem 'pry-rails'
-#gem 'pry-debugger'
 
 gem 'devise', '3.4.0'
-gem 'slim'
+gem 'slim-rails'

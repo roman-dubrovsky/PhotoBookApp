@@ -16,6 +16,8 @@ rake db:setup
 
 ## TO.DO.
 
+gem "simple_form"
+
 ####Devise
 ```
 Some setup you must do manually if you haven't yet:
