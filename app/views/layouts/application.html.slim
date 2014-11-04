@@ -1,9 +1,12 @@
 doctype html
-html
+html lang="en"
   head
-    title PhotoBookApp
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title 
+      = content_for?(:title) ? yield(:title) : "PhotoBookApp"
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'vendor/modernizr' => true
     = csrf_meta_tags 
   body
     p#notice
@@ -15,3 +18,5 @@ html
     brs
 
     == yield
+
+    = javascript_include_tag "application"
