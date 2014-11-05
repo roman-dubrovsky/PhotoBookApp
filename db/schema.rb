@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101183110) do
+ActiveRecord::Schema.define(version: 20141105174706) do
+
+  create_table "album_photo_settings", force: true do |t|
+    t.integer  "album_id"
+    t.integer  "photo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "album_photo_settings", ["album_id"], name: "index_album_photo_settings_on_album_id", using: :btree
+  add_index "album_photo_settings", ["photo_id"], name: "index_album_photo_settings_on_photo_id", using: :btree
 
   create_table "albums", force: true do |t|
     t.string   "title"
