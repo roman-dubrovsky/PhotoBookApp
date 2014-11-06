@@ -1,7 +1,5 @@
 h1 Homepage
-#content
-  | Hello, 
-  = current_user.email
 
-= link_to "Albums", albums_path
-= link_to "Photos", photos_path
+= link_to "Albums(#{current_user.albums.count}/#{Album.count})", albums_path
+br
+= link_to "Photos(#{current_user.photos.count}/#{Photo.count})", photos_path

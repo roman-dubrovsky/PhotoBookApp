@@ -13,3 +13,13 @@ p
 = link_to 'Edit', edit_album_path(@album)
 '|
 = link_to 'Back', albums_path
+
+p 
+  strong Photos(#{@album.photos.count})
+
+- @album.photos.each do |f|
+  p
+  -unless f.file_url.nil?
+    = image_tag @photo.file_url
+  -else
+    | Not found photo

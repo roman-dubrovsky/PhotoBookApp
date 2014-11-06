@@ -9,14 +9,7 @@ html lang="en"
     = javascript_include_tag 'vendor/modernizr' => true
     = csrf_meta_tags 
   body
-    p#notice
-      =notice
-    p#alert
-      =alert
-
-    = link_to "Home", root_path
-    brs
-
+    =render "shared/header"
+    =render "shared/notices"
     == yield
-
     = javascript_include_tag "application"
