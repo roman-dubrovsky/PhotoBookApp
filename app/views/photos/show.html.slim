@@ -1,11 +1,9 @@
-p#notice = notice
-
 p
   strong Title:
   = @photo.title
 p
   -unless @photo.file_url.nil?
-    = image_tag @photo.file_url
+    = image_tag @photo.file_url(:show)
   -else
     | Not found photo
 p
