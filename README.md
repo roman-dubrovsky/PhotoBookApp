@@ -17,6 +17,14 @@ rake db:setup
 
 ## TO.DO.
 
+#### Photos#index
+```
+  1. New photo block
+  2. Sexy design
+  3. Drog&Drup upload
+  4. Multy upload
+```  
+
 ####Devise
 ```
 Some setup you must do manually if you haven't yet:

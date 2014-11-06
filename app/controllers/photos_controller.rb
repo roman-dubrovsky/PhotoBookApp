@@ -2,30 +2,19 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @photos = Photo.all
+    @photos = current_user.photos
+    @photo = Photo.new
   end
 
   def show
   end
 
-  def new
-    @photo = Photo.new
-  end
-
-  def edit
-  end
-
   def create
     @photo = current_user.photos.new(photo_params)
     @photo.save
-    redirect_to photo_path @photo
+    redirect_to photos_path
   end
-
-  def update
-    @photo.update(photo_params)
-    redirect_to photo_path @photo
-  end
-
+  
   def destroy
     @photo.destroy
     redirect_to photos_path
@@ -37,6 +26,6 @@ class PhotosController < ApplicationController
     end
 
     def photo_params
-      params.require(:photo).permit(:title, :file)
+      params.require(:photo).permit(:file)
     end
 end
