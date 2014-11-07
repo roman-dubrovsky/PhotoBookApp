@@ -12,6 +12,9 @@ gem 'spring',        group: :development
 
 gem 'pry'
 gem 'pry-rails'
+gem 'pry-remote'
+gem 'pry-stack_explorer'
+gem 'pry-byebug'
 
 gem 'devise', '3.4.0'
 gem 'slim-rails'

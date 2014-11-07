@@ -1,9 +1,10 @@
 # PhotoBook
 
-## Enviroment
+## Requirements
 ```
 Ruby 2.1.3
 MySql
+RMagick
 ```
 
 ## Setup
@@ -23,6 +24,13 @@ rake db:setup
   2. Sexy design
   3. Drog&Drup upload
   4. Multy upload
+```  
+
+#### Photos#show
+```
+  1. Sexy nagigation
+  2. Sexy design
+  3. Alax loads
 ```  
 
 ####Devise

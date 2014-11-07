@@ -1,10 +1,13 @@
-p
-  -unless @photo.file_url.nil?
-    = image_tag @photo.file_url(:show)
-  -else
-    | Not found photo
-p
-  strong User:
-  = @photo.user.email
+.onRight
+  = "#{@num+1}/#{@count}"
 
-= link_to 'Back', photos_path
+.photo
+  = image_tag @photo.file_url
+
+p.onRight
+  = "Date: #{l @photo.created_at, format: :long}" 
+p
+  = link_to 'Back', photos_path
+  = link_to "Pred", photo_path(@pred)
+  = link_to "Next", photo_path(@next)
+

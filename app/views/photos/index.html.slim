@@ -5,10 +5,9 @@
   .actions = f.submit 'Save'
 br
 
-ul.small-block-grid-2.large-block-grid-4
+ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
   - @photos.each do |f|
     li
-      = image_tag f.file_url(:preview) 
-      br
+      = image_tag f.file_url(:preview)
       = link_to "Show", f
       = link_to "Destroy", f, data: {:confirm => 'Are you sure?'}, :method => :delete

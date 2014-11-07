@@ -5,4 +5,6 @@ class Photo < ActiveRecord::Base
   has_many :albums, through: :album_photo_settings
 
   mount_uploader :file, PhotoUploader
+
+  validates  :file, presence: true
 end

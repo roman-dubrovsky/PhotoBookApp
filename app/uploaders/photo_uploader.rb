@@ -9,7 +9,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :preview do
-    resize_to_fit(400,300)
+    resize_to_fill(300,200)
   end
   
 end

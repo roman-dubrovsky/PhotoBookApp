@@ -11,5 +11,9 @@ html lang="en"
   body
     =render "shared/header"
     =render "shared/notices"
-    == yield
+    .row
+      .large-1.columns
+      .small-12.largу-10.columns
+        == yield
+      .large-1.columns
     = javascript_include_tag "application"
