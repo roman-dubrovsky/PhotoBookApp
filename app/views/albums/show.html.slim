@@ -15,9 +15,7 @@ p
 p 
   strong Photos(#{@album.photos.count})
 
-- @album.photos.each do |f|
-  p
-  -unless f.file_url.nil?
-    = image_tag f.file_url(:preview)
-  -else
-    | Not found photo
+ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
+  - @album.album_photo_settings.each do |f|
+    li
+      = link_to image_tag(f.photo.file_url(:preview)), f

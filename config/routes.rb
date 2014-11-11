@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       delete 'photo/:photo', to: 'albums#delete', as: 'del_photo'
     end
   end
+  resources :album_photo_settings, only: [:show]
 
   devise_for :users
 end

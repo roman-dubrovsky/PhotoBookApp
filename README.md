@@ -24,6 +24,7 @@ rake db:setup
   2. Sexy design
   3. Drog&Drup upload
   4. Multy upload
+  5. js
 ```  
 
 #### Photos#show
@@ -31,7 +32,44 @@ rake db:setup
   1. Sexy nagigation
   2. Sexy design
   3. Alax loads
+  4. js
+  5. Add to album
 ```  
+
+#### Albums#index
+```
+  1. js
+  2. Sexy design
+```
+
+#### Albums#show
+```
+  1. js
+  2. Sexy design
+```
+
+#### Albums#index
+```
+  1. js
+  2. Sexy design
+  3. Sexy header
+  4. Uploader
+```
+
+#### Albums#show
+```
+  1. Photo#show
+  2. Description
+```
+
+#### Albums#edit
+```
+  1. js
+  2. Sexy design
+  3. Drug&drop
+```
+
+#### db dump
 
 ####Devise
 ```
