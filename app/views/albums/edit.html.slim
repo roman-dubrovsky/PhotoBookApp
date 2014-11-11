@@ -6,3 +6,17 @@ h1 Editing album
 '|
 = link_to 'Back', albums_path
 
+.row
+  .small-6.columns
+    - @photos.each do |f|
+      = image_tag f.file_url(:preview)
+      = link_to "Add", add_photo_album_path(@album, f), method: :post
+    - if @photos.empty?
+      | Not found
+  .small-6.columns
+    - @album.photos.each do |f|
+      = link_to "Remove", del_photo_album_path(@album, f), method: :delete
+      = image_tag f.file_url(:preview)
+      br
+    - if @album.photos.empty?
+      | Not found

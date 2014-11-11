@@ -1,0 +1,18 @@
+.preview
+  .row
+    .small-2.columns
+      - if !preview.top.nil?
+        = image_tag preview.top.photo.file_url(:preview)
+      - elsif !preview.photos.empty?
+        = image_tag preview.photos.first.file_url(:preview)
+      - else
+        | Not found
+    .small-10.columns
+      = preview.title
+      br
+      = "Date: #{l preview.created_at, format: :long}"
+      br
+      = link_to 'Show', preview
+      = link_to 'Edit', edit_album_path(preview)
+      = link_to 'Destroy', preview, data: {:confirm => 'Are you sure?'}, :method => :delete
+br

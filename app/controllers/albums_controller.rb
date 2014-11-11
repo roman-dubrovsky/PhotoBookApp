@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_album, only: [:show, :edit, :update, :destroy, :add, :delete]
 
   def index
     @albums = Album.all
@@ -13,6 +13,7 @@ class AlbumsController < ApplicationController
   end
 
   def edit
+    @photos = Photo.where('id not IN (?)', @album.photos.select(:id))
   end
 
   def create
@@ -29,6 +30,17 @@ class AlbumsController < ApplicationController
   def destroy
     @album.destroy
     redirect_to albums_path
+  end
+
+  def add
+    AlbumPhotoSetting.create(album: @album, photo_id: params[:photo])
+    redirect_to edit_album_path(@album)
+  end
+
+  def delete
+    temp = AlbumPhotoSetting.find_by(album: @album, photo_id: params[:photo])
+    temp.destroy
+    redirect_to edit_album_path(@album)
   end
 
   private

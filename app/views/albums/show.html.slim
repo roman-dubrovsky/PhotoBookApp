@@ -18,6 +18,6 @@ p
 - @album.photos.each do |f|
   p
   -unless f.file_url.nil?
-    = image_tag @photo.file_url(:preview)
+    = image_tag f.file_url(:preview)
   -else
     | Not found photo

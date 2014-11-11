@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106154511) do
+ActiveRecord::Schema.define(version: 20141107153250) do
 
   create_table "album_photo_settings", force: true do |t|
     t.integer  "album_id"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20141106154511) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "top_id"
   end
 
+  add_index "albums", ["top_id"], name: "index_albums_on_top_id", using: :btree
   add_index "albums", ["user_id"], name: "index_albums_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
