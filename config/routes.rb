@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :album_photo_settings, only: [:show]
+  resources :profile, only: [:show]
 
   devise_for :users
 end

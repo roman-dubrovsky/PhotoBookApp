@@ -70,6 +70,9 @@ rake db:setup
 ```
 
 #### db dump
+#### profile#show view
+#### change routes
+#### clear unnecessary files
 
 ####Devise
 ```
