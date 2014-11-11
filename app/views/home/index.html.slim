@@ -8,4 +8,5 @@ p
   h1 Users
 
   -User.all.each do |u|
-    = link_to u.email, profile_path(u)
+    p
+      = link_to u.email, profile_path(u)

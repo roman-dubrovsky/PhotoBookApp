@@ -70,6 +70,7 @@ rake db:setup
 ```
 
 #### db dump
+#### only image uploading
 #### profile#show view
 #### change routes
 #### clear unnecessary files
