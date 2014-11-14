@@ -16,6 +16,10 @@ gem 'pry-remote'
 gem 'pry-stack_explorer'
 gem 'pry-byebug'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
 gem 'devise', '3.4.0'
 gem 'slim-rails'
 gem 'carrierwave', '0.10.0'

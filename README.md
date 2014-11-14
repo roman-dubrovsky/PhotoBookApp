@@ -16,6 +16,11 @@ cp config/cloudinary.yml.example config/cloudinary.yml
 rake db:setup
 ```
 
+## Test
+```
+rspec
+```
+
 ## TO.DO.
 
 #### Photos#index
