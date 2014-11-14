@@ -20,6 +20,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
 
+group :test do
+  gem 'selenium-webdriver', '2.44.0'
+  gem 'capybara', '2.4.4'
+  gem 'factory_girl_rails', '4.5.0'
+end
+
 gem 'devise', '3.4.0'
 gem 'slim-rails'
 gem 'carrierwave', '0.10.0'
