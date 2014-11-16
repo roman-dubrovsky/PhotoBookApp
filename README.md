@@ -79,6 +79,7 @@ rspec
 #### profile#show view
 #### change routes
 #### clear unnecessary files
+#### add validation
 
 ####Devise
 ```
