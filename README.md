@@ -18,7 +18,13 @@ rake db:setup
 
 ## Test
 ```
+mysql {-uUSERNAME -pPASSWORD -hHOST} PhotoBookApp_test < dumps/test.sql (USERNAME, PASSWORD, HOST - your mysql data)
 rspec
+```
+
+## Preproduction
+```
+uncomment uploader tests
 ```
 
 ## TO.DO.

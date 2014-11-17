@@ -12,11 +12,11 @@ describe Photo do
     end
   end
 
-  describe "uploader" do
-    it "try load photo" do
-      photo = FactoryGirl.create(:photo, user: @user)
-      expect(Photo.find(photo.id)).to eq(photo)
-      photo.destroy
-    end
-  end
+  # describe "uploader" do
+  #   it "try load photo" do
+  #     photo = FactoryGirl.create(:photo, user: @user)
+  #     expect(Photo.find(photo.id)).to eq(photo)
+  #     photo.destroy
+  #   end
+  # end
 end
