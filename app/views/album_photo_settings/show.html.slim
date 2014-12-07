@@ -11,3 +11,6 @@ p
   = link_to 'Back', album_path(@album)
   = link_to "Pred", album_photo_setting_path(@pred)
   = link_to "Next", album_photo_setting_path(@next)
+
+= render "comments/list"
+= render "comments/form"

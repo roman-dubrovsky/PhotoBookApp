@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107153250) do
+ActiveRecord::Schema.define(version: 20141207181126) do
 
   create_table "album_photo_settings", force: true do |t|
     t.integer  "album_id"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20141107153250) do
 
   add_index "albums", ["top_id"], name: "index_albums_on_top_id", using: :btree
   add_index "albums", ["user_id"], name: "index_albums_on_user_id", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "photos", force: true do |t|
     t.string   "file"

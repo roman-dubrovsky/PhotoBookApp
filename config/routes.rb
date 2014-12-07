@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
+
+  devise_for :users
   
   resources :photos, only: [:index, :show, :create, :destroy]  
   resources :albums do
@@ -10,6 +12,5 @@ Rails.application.routes.draw do
   end
   resources :album_photo_settings, only: [:show]
   resources :profile, only: [:show]
-
-  devise_for :users
+  resources :comments, only: [:create]
 end

@@ -4,4 +4,5 @@ class Album < ActiveRecord::Base
 
   has_many :album_photo_settings, dependent: :destroy
   has_many :photos, through: :album_photo_settings
+  has_many :comments, :as => :commentable
 end

@@ -8,5 +8,8 @@ class AlbumPhotoSettingsController < ApplicationController
     @next = AlbumPhotoSetting.find(items[@num + 1] || items[0])
     @pred = AlbumPhotoSetting.find(items[@num - 1])
     @count = items.count
+
+    @comments = album_photo_setting.comments
+    @comment = album_photo_setting.comments.new
   end
 end

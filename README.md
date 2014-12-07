@@ -16,7 +16,7 @@ cp config/cloudinary.yml.example config/cloudinary.yml
 rake db:setup
 ```
 
-## Test
+## Test  !!!Warning! Spec down !!!!!
 ```
 mysql {-uUSERNAME -pPASSWORD -hHOST} PhotoBookApp_test < dumps/test.sql (USERNAME, PASSWORD, HOST - your mysql data)
 rspec
@@ -25,6 +25,8 @@ rspec
 ## Preproduction
 ```
 uncomment uploader tests
+clear unnecessary files
+change routes
 ```
 
 ## TO.DO.
@@ -80,12 +82,15 @@ uncomment uploader tests
   3. Drug&drop
 ```
 
-#### db dump
+#### Coments
+  1. Ajax- added
+  2. Infinite scrolling 
+  3. Sexy design
+
 #### only image uploading
 #### profile#show view
-#### change routes
-#### clear unnecessary files
 #### add validation
+#### view's specs
 
 ####Devise
 ```
