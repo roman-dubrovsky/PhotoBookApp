@@ -16,9 +16,8 @@ cp config/cloudinary.yml.example config/cloudinary.yml
 rake db:setup
 ```
 
-## Test  !!!Warning! Spec down !!!!!
+## Test
 ```
-mysql {-uUSERNAME -pPASSWORD -hHOST} PhotoBookApp_test < dumps/test.sql (USERNAME, PASSWORD, HOST - your mysql data)
 rspec
 ```
 
@@ -86,6 +85,7 @@ change routes
   1. Ajax- added
   2. Infinite scrolling 
   3. Sexy design
+  4. Can edit and destroy
 
 #### only image uploading
 #### profile#show view

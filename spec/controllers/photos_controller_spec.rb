@@ -2,8 +2,14 @@ require 'rails_helper'
 
 describe PhotosController do
   before(:all) do
-    @user = User.find_by_email("roma2107@tut.by")
-    @photo = @user.photos.first
+    @user = FactoryGirl.create(:user)
+    @photo = Photo.new(user: @user)
+    @photo.save(validate: false)
+  end
+
+  after(:all) do
+    @user.destroy
+    @photo.destroy 
   end
 
   describe "without autorization" do

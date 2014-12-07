@@ -2,12 +2,13 @@ require 'rails_helper'
 
 describe ProfileController do
   before(:all) do
-    @user = User.find_by_email("roma2107@tut.by")
-    @new_user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user)
+    @new_user = FactoryGirl.create(:new_user)
   end
 
   after(:all) do
     @new_user.destroy
+    @user.destroy
   end
 
   describe "without autorization" do

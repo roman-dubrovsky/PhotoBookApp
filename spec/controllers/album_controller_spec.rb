@@ -2,8 +2,13 @@ require 'rails_helper'
 
 describe AlbumsController do
   before(:all) do
-    @user = User.find_by_email("roma2107@tut.by")
-    @album = @user.albums.first    
+    @user = FactoryGirl.create(:user)
+    @album = FactoryGirl.create(:album, user: @user)  
+  end
+
+  after(:all) do
+    @user.destroy
+    @album.destroy
   end
 
   describe "without autorization" do
@@ -128,12 +133,12 @@ describe AlbumsController do
       sign_in @user
     end
 
-    before(:all) do
+    before(:each) do
       @new_photo = Photo.new(user: @user)
       @new_photo.save(validate: false)
     end
 
-    after(:all) do
+    after(:each) do
       @new_photo.destroy
     end
 
@@ -146,6 +151,7 @@ describe AlbumsController do
 
     describe "DELETE :delete" do
       it "last photo" do
+        post :add, id: @album.id, photo: @new_photo.id
         photo = @album.photos.last
         delete :delete, id: @album.id, photo: photo.id
         expect(response).to redirect_to(edit_album_path(@album))

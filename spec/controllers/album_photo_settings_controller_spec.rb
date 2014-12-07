@@ -2,8 +2,18 @@ require 'rails_helper'
 
 describe AlbumPhotoSettingsController do
   before(:all) do
-    @user = User.find_by_email("roma2107@tut.by")
-    @photo = AlbumPhotoSetting.first
+    @user = FactoryGirl.create(:user)
+    @album = FactoryGirl.create(:album)
+    @photo_obj = Photo.new(user: @user)
+    @photo_obj.save(validate: false)
+    @photo = AlbumPhotoSetting.create(photo: @photo_obj, album: @album)
+  end
+
+  after(:all) do
+    @user.destroy
+    @album.destroy
+    @photo_obj.destroy
+    @photo.destroy
   end
 
   describe "without autorization" do
