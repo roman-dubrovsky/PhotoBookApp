@@ -1,0 +1,24 @@
+p
+  strong Title:
+  = @slide_show.title
+p
+  strong Description:
+  = @slide_show.description
+p
+  strong User:
+  = @slide_show.user.email
+
+= link_to 'Edit', edit_slide_show_path(@slide_show)
+'|
+= link_to 'Back', slide_shows_path
+
+p 
+  strong Photos(#{@slide_show.photos.count})
+
+ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
+  - @slide_show.photos.each do |f|
+    li
+      = image_tag f.file_url(:preview)
+
+= render "comments/list"
+= render "comments/form"

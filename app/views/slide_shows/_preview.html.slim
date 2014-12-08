@@ -1,0 +1,11 @@
+.preview
+  .row
+    .small-10.columns
+      = preview.title
+      br
+      = "Date: #{l preview.created_at, format: :long}"
+      br
+      = link_to 'Show', preview
+      = link_to 'Edit', edit_slide_show_path(preview)
+      = link_to 'Destroy', preview, data: {:confirm => 'Are you sure?'}, :method => :delete
+br

@@ -1,0 +1,22 @@
+h1 Editing slide show
+
+== render 'form'
+
+= link_to 'Show', @slide_show
+'|
+= link_to 'Back', slide_shows_path
+
+.row
+  .small-6.columns
+    - @photos.each do |f|
+      = image_tag f.file_url(:preview)
+      = link_to "Add", add_photo_slide_show_path(@slide_show, f), method: :post
+    - if @photos.empty?
+      | Not found
+  .small-6.columns
+    - @slide_show.photos.each do |f|
+      = link_to "Remove", del_photo_slide_show_path(@slide_show, f), method: :delete
+      = image_tag f.file_url(:preview)
+      br
+    - if @slide_show.photos.empty?
+      | Not found

@@ -2,7 +2,13 @@ p
   | User: 
   = @user.email
 
+h3 Albums
 = render partial: 'albums/preview', collection: @albums
+
+br
+
+h3 Slede Shows
+= render partial: 'slide_shows/preview', collection: @slide_shows 
 
 = render "comments/list"
 = render "comments/form"
