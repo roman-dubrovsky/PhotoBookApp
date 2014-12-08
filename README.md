@@ -82,11 +82,22 @@ change routes
 ```
 
 #### Coments
+```
   1. Ajax- added
   2. Infinite scrolling 
   3. Sexy design
   4. Can edit and destroy
+```
 
+#### Slideshow
+```
+  1. Sexy design
+  2. Size
+  3. js
+  4. Number
+```
+
+#### owlcarousel - for other photo
 #### only image uploading
 #### profile#show view
 #### add validation

@@ -15,9 +15,9 @@ p
 p 
   strong Photos(#{@slide_show.photos.count})
 
-ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
+.owl-carousel#owl-demo
   - @slide_show.photos.each do |f|
-    li
+    div
       = image_tag f.file_url(:preview)
 
 = render "comments/list"
