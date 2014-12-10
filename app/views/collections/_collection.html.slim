@@ -1,0 +1,31 @@
+.panel
+  .row
+    .small-10.columns
+      h4 = collection.title
+    .small-2.columns
+      .icons
+        .right
+          = link_to '#', 'data-reveal-id' => "add#{collection.id}" do 
+            i.fi-plus
+          = link_to '#', 'data-reveal-id' => "edit#{collection.id}" do 
+            i.fi-wrench
+          = link_to collection, data: {:confirm => 'Are you sure? You delete all albums and slide shows in that collection too!'}, :method => :delete do 
+            i.fi-x
+  #owl-collection
+    -collection.elements.each do |item|
+      .item
+        = link_to top_picture(item), item  
+        .collection-title
+          .text = item.title
+          span
+            = item.class.name
+
+.reveal-modal(data-reveal id = "edit#{collection.id}")  
+  h2 Edit collection
+  = render partial: "collections/form", object: collection 
+  a.close-reveal-modal &#215;
+
+.reveal-modal(data-reveal id = "add#{collection.id}")  
+  br = link_to "Add new album", new_album_path(collection: collection.id), class: "button tiny allWidth"
+  br = link_to "Add new slideshow", new_slide_show_path(collection: collection.id), class: "button tiny allWidth"
+  a.close-reveal-modal &#215;

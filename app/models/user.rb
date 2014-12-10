@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   has_many :slide_shows, dependent: :destroy
   has_many :comments, :as => :commentable
+  has_many :collections
 end

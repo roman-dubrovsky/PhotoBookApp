@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208005508) do
+ActiveRecord::Schema.define(version: 20141209213717) do
 
   create_table "album_photo_settings", force: true do |t|
     t.integer  "album_id"
@@ -30,10 +30,21 @@ ActiveRecord::Schema.define(version: 20141208005508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "top_id"
+    t.integer  "collection_id"
   end
 
+  add_index "albums", ["collection_id"], name: "index_albums_on_collection_id", using: :btree
   add_index "albums", ["top_id"], name: "index_albums_on_top_id", using: :btree
   add_index "albums", ["user_id"], name: "index_albums_on_user_id", using: :btree
+
+  create_table "collections", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -71,8 +82,12 @@ ActiveRecord::Schema.define(version: 20141208005508) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "collection_id"
+    t.integer  "top_id"
   end
 
+  add_index "slide_shows", ["collection_id"], name: "index_slide_shows_on_collection_id", using: :btree
+  add_index "slide_shows", ["top_id"], name: "index_slide_shows_on_top_id", using: :btree
   add_index "slide_shows", ["user_id"], name: "index_slide_shows_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

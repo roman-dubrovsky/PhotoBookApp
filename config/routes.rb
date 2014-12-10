@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   resources :album_photo_settings, only: [:show]
   resources :profile, only: [:show]
   resources :comments, only: [:create]
+  resources :collections, only: [:create, :update, :destroy]
+
+  get '/index', to: 'profile#index', as: :index
 end

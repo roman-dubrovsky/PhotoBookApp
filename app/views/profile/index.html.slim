@@ -1,0 +1,14 @@
+h2 My Page
+
+= link_to "New Collection", '#', class: "button success allWidth", 'data-reveal-id' => "createCategory"
+
+.reveal-modal#createCategory(data-reveal)
+  h2 New collection
+  = render partial: "collections/form", object: Collection.new 
+  a.close-reveal-modal &#215;
+
+- @collections.each do |collection|
+  = render collection
+
+= render "comments/list"
+= render "comments/form"

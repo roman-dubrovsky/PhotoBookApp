@@ -16,7 +16,13 @@
 @import 'photos';
 @import "owl.carousel";
 @import "owl.theme";
+@import 'collections';
+@import 'foundation-icons';
 
 .onRight{
   text-align: right;
+}
+
+.allWidth {
+  width: 100%;
 }

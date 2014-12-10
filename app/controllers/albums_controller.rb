@@ -12,6 +12,7 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    @collection = params[:collection]
   end
 
   def edit
@@ -19,7 +20,9 @@ class AlbumsController < ApplicationController
   end
 
   def create
+    @collection = Collection.find(params[:album][:collection])
     @album = current_user.albums.new(album_params)
+    @album.collection = @collection
     @album.save
     redirect_to album_path(@album)
   end

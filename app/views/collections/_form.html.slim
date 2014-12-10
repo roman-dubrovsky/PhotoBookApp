@@ -1,0 +1,5 @@
+= form_for form do |f|
+  .field
+    = f.label :title
+    = f.text_field :title
+  .actions = f.submit 'Save', class: "button success tiny allWidth"

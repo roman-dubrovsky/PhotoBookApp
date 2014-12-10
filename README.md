@@ -97,6 +97,11 @@ change routes
   4. Number
 ```
 
+#### Category
+```
+  Alax
+```
+
 #### owlcarousel - for other photo
 #### only image uploading
 #### profile#show view

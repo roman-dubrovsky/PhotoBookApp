@@ -12,6 +12,7 @@ class SlideShowsController < ApplicationController
 
   def new
     @slide_show = SlideShow.new
+    @collection = params[:collection]
   end
 
   def edit
@@ -19,7 +20,9 @@ class SlideShowsController < ApplicationController
   end
 
   def create
+    @collection = Collection.find(params[:slide_show][:collection])
     @slide_show = current_user.slide_shows.new(slide_show_params)
+    @slide_show.collection = @collection
     @slide_show.save
     redirect_to slide_show_path(@slide_show)
   end

@@ -5,7 +5,8 @@
       ul
         - @slide_show.errors.full_messages.each do |message|
           li = message
-
+          
+  = f.hidden_field :collection, value: @collection
   .field
     = f.label :title
     = f.text_field :title
