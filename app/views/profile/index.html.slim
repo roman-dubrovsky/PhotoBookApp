@@ -11,4 +11,4 @@ h2 My Page
   = render collection
 
 = render "comments/list"
-= render "comments/form"
+= render partial: "comments/form", object: @user.comments.build

@@ -1,14 +1,8 @@
 h1 Homepage
 
-= link_to "Albums(#{current_user.albums.count}/#{Album.count})", albums_path
-br
-= link_to "Photos(#{current_user.photos.count}/#{Photo.count})", photos_path
-br
-= link_to "SlideShows(#{current_user.slide_shows.count}/#{SlideShow.count})", slide_shows_path
-
 p
   h1 Users
 
-  -User.all.each do |u|
+  -@users.each do |u|
     p
       = link_to u.email, profile_path(u)

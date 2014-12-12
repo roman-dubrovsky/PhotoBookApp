@@ -30,6 +30,11 @@ change routes
 
 ## TO.DO.
 
+#### HomePage
+#### Avatar and user info on profile(and in my page)
+#### Add footer
+#### Add static page
+
 #### Photos#index
 ```
   1. New photo block
@@ -83,10 +88,10 @@ change routes
 
 #### Coments
 ```
-  1. Ajax- added
-  2. Infinite scrolling 
-  3. Sexy design
-  4. Can edit and destroy
+  1. Infinite scrolling 
+  2. Can edit
+  3. Lenghth
+  4. Hide button
 ```
 
 #### Slideshow
@@ -95,11 +100,6 @@ change routes
   2. Size
   3. js
   4. Number
-```
-
-#### Category
-```
-  Alax
 ```
 
 #### owlcarousel - for other photo

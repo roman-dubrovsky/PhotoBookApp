@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
-    @collection = Album.all
+    @users = User.all
   end
 end

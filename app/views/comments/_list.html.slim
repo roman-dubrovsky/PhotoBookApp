@@ -1,8 +1,4 @@
 h3 Comments
 
-- @comments.each do |c|
-  - unless c.user.nil?
-    p
-      b = c.user.email
-      | :    
-      = c.body
+#comment-list
+  = render @comments

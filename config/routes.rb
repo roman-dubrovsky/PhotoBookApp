@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   resources :album_photo_settings, only: [:show]
   resources :profile, only: [:show]
-  resources :comments, only: [:create]
+  resources :comments, only: [:create, :destroy]
   resources :collections, only: [:create, :update, :destroy]
 
   get '/index', to: 'profile#index', as: :index

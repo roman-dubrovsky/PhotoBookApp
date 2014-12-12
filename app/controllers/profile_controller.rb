@@ -1,5 +1,7 @@
 class ProfileController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: :show
+
   def show
     @user = User.find params[:id]
     info_about_user
@@ -14,6 +16,5 @@ private
   def info_about_user
     @collections = @user.collections
     @comments = @user.comments
-    @comment = @user.comments.new
   end
 end
