@@ -1,16 +1,18 @@
-.onRight
-  = @album.title
-  = "#{@num+1}/#{@count}"
-
-.photo
+.slide_show_item
   = image_tag @photo.file_url
 
-p.onRight
-  = "Date: #{l @photo.created_at, format: :long}" 
-p
-  = link_to 'Back', album_path(@album)
-  = link_to "Pred", album_photo_setting_path(@pred)
-  = link_to "Next", album_photo_setting_path(@next)
+.row
+  .small-1.columns
+    = link_to album_photo_setting_path(@pred) do
+      .nav-icons
+        .fi-arrow-left
+  .small-10.columns
+  .small-1.columns
+    .onRight
+      = link_to album_photo_setting_path(@next) do
+        .nav-icons
+          .fi-arrow-right
 
 = render "comments/list"
-= render "comments/form"
+- if user_signed_in?
+  = render partial: "comments/form", object: @album_photo_setting.comments.build

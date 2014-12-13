@@ -1,4 +1,4 @@
 = form_for form, url: comments_path(commenter_type: form.commentable_type, commenter_id: form.commentable_id), remote: true do |f|
   .filed
-    = f.text_area :body
+    = f.text_area :body, placeholder: "Your comment", id: 'comment-field'
   .actions.onRight = f.submit "Add Comment", class: "button alert small round" 

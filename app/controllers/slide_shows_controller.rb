@@ -1,13 +1,9 @@
 class SlideShowsController < ApplicationController
   before_action :set_slide, only: [:show, :edit, :update, :destroy, :add, :delete]
-
-  def index
-    @slide_shows = SlideShow.all
-  end
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @comments = @slide_show.comments
-    @comment = @slide_show.comments.new
   end
 
   def new

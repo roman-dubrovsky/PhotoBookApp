@@ -1,2 +1,3 @@
 var list = $('#comment-list');
-list.append('<%= escape_javascript(render @comment) %>')
+list.append('<%= escape_javascript(render @comment) %>');
+$('#comment-field').val("");

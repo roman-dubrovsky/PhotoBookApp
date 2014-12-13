@@ -1,24 +1,25 @@
-p
-  strong Title:
-  = @slide_show.title
-p
-  strong Description:
-  = @slide_show.description
-p
-  strong User:
-  = @slide_show.user.email
+.row
+  .small-11.columns
+    h1.subheader = @slide_show.title 
+  .small-1.columns
+    .icons
+      .right
+        = link_to [:edit, @slide_show] do 
+          i.fi-wrench
+        = link_to @slide_show, data: {:confirm => 'Are you sure?'}, :method => :delete do 
+          i.fi-x
 
-= link_to 'Edit', edit_slide_show_path(@slide_show)
-'|
-= link_to 'Back', slide_shows_path
 
-p 
-  strong Photos(#{@slide_show.photos.count})
-
-.owl-carousel#owl-demo
+.owl-carousel#owl-slide_show
   - @slide_show.photos.each do |f|
-    div
-      = image_tag f.file_url(:preview)
+    .slide_show_item
+      = image_tag f.file_url
+
+p.description
+  blockquote 
+    = @slide_show.description
+    cite = @slide_show.user.email
 
 = render "comments/list"
-= render "comments/form"
+- if user_signed_in?
+  = render partial: "comments/form", object: @slide_show.comments.build

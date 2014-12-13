@@ -34,6 +34,15 @@ change routes
 #### Avatar and user info on profile(and in my page)
 #### Add footer
 #### Add static page
+#### Drug&Drop photo on settings
+#### Added descriptions to album_photo_settings
+
+#### Coments
+```
+  1. Infinite scrolling 
+  2. Can edit
+  3. Lenghth
+```
 
 #### Photos#index
 ```
@@ -86,14 +95,6 @@ change routes
   3. Drug&drop
 ```
 
-#### Coments
-```
-  1. Infinite scrolling 
-  2. Can edit
-  3. Lenghth
-  4. Hide button
-```
-
 #### Slideshow
 ```
   1. Sexy design
@@ -107,6 +108,8 @@ change routes
 #### profile#show view
 #### add validation
 #### view's specs
+
+#### Hide buttons
 
 ####Devise
 ```

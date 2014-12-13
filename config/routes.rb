@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :photos, only: [:index, :show, :create, :destroy]  
-  resources :albums do
+  resources :albums, except: [:index] do
     member do
       post 'photo/:photo', to: 'albums#add', as: 'add_photo'
       delete 'photo/:photo', to: 'albums#delete', as: 'del_photo'
     end
   end
-  resources :slide_shows do   # i haven't time that is normal
+  resources :slide_shows, except: [:index] do    # i haven't time that is normal
     member do
       post 'photo/:photo', to: 'slide_shows#add', as: 'add_photo'
       delete 'photo/:photo', to: 'slide_shows#delete', as: 'del_photo'

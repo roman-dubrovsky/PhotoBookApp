@@ -1,11 +1,12 @@
 $(document).ready(function() {
  
-  $("#owl-demo").owlCarousel({
+  $("#owl-slide_show").owlCarousel({
  
       navigation : true, // Show next and prev buttons
       slideSpeed : 300,
       paginationSpeed : 400,
-      singleItem:true
+      singleItem:true,
+      autoPlay: 2000
   });
  
 });

@@ -1,13 +1,8 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy, :add, :delete]
 
-  def index
-    @albums = Album.all
-  end
-
   def show
     @comments = @album.comments
-    @comment = @album.comments.new
   end
 
   def new

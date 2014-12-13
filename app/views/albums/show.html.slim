@@ -1,24 +1,28 @@
-p
-  strong Title:
-  = @album.title
-p
-  strong Description:
-  = @album.description
-p
-  strong User:
-  = @album.user.email
+.row
+  .small-11.columns
+    h1.subheader = @album.title 
+  .small-1.columns
+    .icons
+      .right
+        = link_to [:edit, @album] do 
+          i.fi-wrench
+        = link_to @album, data: {:confirm => 'Are you sure?'}, :method => :delete do 
+          i.fi-x
 
-= link_to 'Edit', edit_album_path(@album)
-'|
-= link_to 'Back', albums_path
+p.description
+  blockquote 
+    = @album.description
+    cite = @album.user.email
 
-p 
-  strong Photos(#{@album.photos.count})
+h4
+  small
+    = "Photos(#{@album.photos.count})"
 
-ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
-  - @album.album_photo_settings.each do |f|
-    li
-      = link_to image_tag(f.photo.file_url(:preview)), f
+#owl-collection
+  -@album.album_photo_settings.each do |item|
+    .item
+      = link_to image_tag(item.photo.file_url(:preview)), item  
 
 = render "comments/list"
-= render "comments/form"
+- if user_signed_in?
+  = render partial: "comments/form", object: @album.comments.build
