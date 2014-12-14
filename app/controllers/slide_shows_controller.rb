@@ -30,7 +30,7 @@ class SlideShowsController < ApplicationController
 
   def destroy
     @slide_show.destroy
-    redirect_to slide_shows_path
+    redirect_to index_path
   end
 
   def add

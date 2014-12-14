@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy, :add, :delete]
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @comments = @album.comments
@@ -29,7 +30,7 @@ class AlbumsController < ApplicationController
 
   def destroy
     @album.destroy
-    redirect_to albums_path
+    redirect_to index_path
   end
 
   def add

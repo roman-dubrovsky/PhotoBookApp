@@ -34,7 +34,6 @@ change routes
 #### Avatar and user info on profile(and in my page)
 #### Add footer
 #### Add static page
-#### Drug&Drop photo on settings
 #### Added descriptions to album_photo_settings
 
 #### Coments
@@ -53,62 +52,26 @@ change routes
   5. js
 ```  
 
-#### Photos#show
+#### Photos#show & album_photo#show load
 ```
-  1. Sexy nagigation
-  2. Sexy design
-  3. Alax loads
-  4. js
-  5. Add to album
+  1. photos#show like album_photo#show
+  2. Alax loads and modal window
+  3. Menu
 ```  
-
-#### Albums#index
-```
-  1. js
-  2. Sexy design
-```
-
-#### Albums#show
-```
-  1. js
-  2. Sexy design
-```
-
-#### Albums#index
-```
-  1. js
-  2. Sexy design
-  3. Sexy header
-  4. Uploader
-```
-
-#### Albums#show
-```
-  1. Photo#show
-  2. Description
-```
 
 #### Albums#edit
 ```
-  1. js
-  2. Sexy design
-  3. Drug&drop
+  1. Drug&drop
+  2. Uploads photo
 ```
 
 #### Slideshow
 ```
-  1. Sexy design
-  2. Size
-  3. js
-  4. Number
+  1. Number
 ```
 
-#### owlcarousel - for other photo
 #### only image uploading
-#### profile#show view
 #### add validation
-#### view's specs
-
 #### Hide buttons
 
 ####Devise

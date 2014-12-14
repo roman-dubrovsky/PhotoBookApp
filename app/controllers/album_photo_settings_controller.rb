@@ -1,4 +1,6 @@
 class AlbumPhotoSettingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+
   def show
     @album_photo_setting = AlbumPhotoSetting.find params[:id]
     @photo = @album_photo_setting.photo
