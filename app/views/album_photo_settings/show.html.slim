@@ -1,5 +1,5 @@
 .slide_show_item
-  = image_tag @photo.file_url
+  = image_tag @album_photo_setting.photo.file_url
 
 .row
   .small-1.columns
@@ -7,6 +7,7 @@
       .nav-icons
         .fi-arrow-left
   .small-10.columns
+    = render partial: 'votes/block', locals: {content: @album_photo_setting}
   .small-1.columns
     .onRight
       = link_to album_photo_setting_path(@next) do

@@ -1,0 +1,12 @@
+.nav-icons.onRight
+  - if user_signed_in?
+    - unless content.votes.where(user: current_user).first.nil? 
+      = link_to content.votes.where(user: current_user).first, method: :delete, remote: true, style: "color: #095900" do
+        i.fi-like
+    -else
+      input type="hidden" name="content_type" value="#{content.class.to_s}" 
+      input type="hidden" name="content_id" value="#{content.id}"
+      = link_to votes_path(content_id: content.id, content_type: content.class.to_s), method: :post, remote: true, style: "color: #718570" do
+        i.fi-like
+  |  
+  = content.votes.count

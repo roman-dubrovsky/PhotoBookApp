@@ -19,6 +19,7 @@
           .text = item.title
           span
             = item.class.name
+  = render partial: 'votes/block', locals: {content: collection}
 
 .reveal-modal(data-reveal id = "edit#{collection.id}")  
   h2 Edit collection

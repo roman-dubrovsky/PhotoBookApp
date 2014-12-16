@@ -20,6 +20,7 @@ p.description
     = @slide_show.description
     cite = @slide_show.user.email
 
+= render partial: 'votes/block', locals: {content: @slide_show}
 = render "comments/list"
 - if user_signed_in?
   = render partial: "comments/form", object: @slide_show.comments.build

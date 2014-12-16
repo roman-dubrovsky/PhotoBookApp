@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       delete 'photo/:photo', to: 'albums#delete', as: 'del_photo'
     end
   end
-  resources :slide_shows, except: [:index] do    # i haven't time that is normal
+  resources :slide_shows, except: [:index] do    # i haven't time making that is normal
     member do
       post 'photo/:photo', to: 'slide_shows#add', as: 'add_photo'
       delete 'photo/:photo', to: 'slide_shows#delete', as: 'del_photo'
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :profile, only: [:show]
   resources :comments, only: [:create, :destroy]
   resources :collections, only: [:create, :update, :destroy]
+  resources :votes, only: [:create, :destroy]
 
   get '/index', to: 'profile#index', as: :index
 end

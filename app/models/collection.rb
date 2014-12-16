@@ -3,6 +3,7 @@ class Collection < ActiveRecord::Base
 
   has_many :slide_shows, dependent: :destroy
   has_many :albums, dependent: :destroy
+  has_many :votes, as: :content, dependent: :destroy
 
   def elements
     res = self.slide_shows + self.albums

@@ -23,6 +23,7 @@ h4
     .item
       = link_to image_tag(item.photo.file_url(:preview)), item  
 
+= render partial: 'votes/block', locals: {content: @album}
 = render "comments/list"
 - if user_signed_in?
   = render partial: "comments/form", object: @album.comments.build

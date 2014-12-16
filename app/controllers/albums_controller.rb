@@ -20,7 +20,7 @@ class AlbumsController < ApplicationController
     @album = current_user.albums.new(album_params)
     @album.collection = @collection
     @album.save
-    redirect_to album_path(@album)
+    redirect_to edit_album_path(@album)
   end
 
   def update
