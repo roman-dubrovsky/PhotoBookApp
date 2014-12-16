@@ -35,6 +35,7 @@ change routes
 #### Add footer
 #### Add static page
 #### Added descriptions to album_photo_settings
+#### added back button
 
 #### Coments
 ```
