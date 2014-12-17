@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :votes, only: [:create, :destroy]
 
   get '/index', to: 'profile#index', as: :index
+  post 'search', to: 'search#search', as: :search
 end

@@ -3,11 +3,12 @@ nav.top-bar role="navigation"
     li.name
       h1
         = link_to "PhotoBook", root_path
+
   section.top-bar-section
     ul.right
       - if user_signed_in?
         li
-          = link_to "Welcome, #{current_user.email}", index_path
+          = link_to "Profile", index_path
         li
           = link_to "Yout photos", photos_path
         li
@@ -17,3 +18,7 @@ nav.top-bar role="navigation"
           = link_to "Sign In", new_user_session_path
         li
           = link_to "Sign Up", new_user_registration_path
+    ul.left
+      li.row.collapse
+        = form_tag search_path 
+          = text_field_tag 'q', "", placeholder: "Searching user"
