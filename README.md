@@ -36,6 +36,7 @@ change routes
 #### Add static page
 #### Added descriptions to album_photo_settings
 #### added back button
+#### added image for slideshow on main page
 
 #### Coments
 ```

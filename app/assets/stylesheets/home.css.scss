@@ -2,11 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#owl-collection .item{
-  margin: 3px;
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
+.header {
+  background-image: image_url("background.jpg");
+  background-position: center;
+  background-size: cover; 
+  .header-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.title {
+  color: #FFF;
+  text-align: center;
+}
+
+.collection-title {
+  display:block;
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  box-sizing:border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+   
+  color: #fff;
+       
+  padding:1px;
+  padding-left: 10px;
+  background-color:rgba(0,0,0,.7);
+
+  .text {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    color: #fff;
+  } 
+
+  span{
+    font-size:9px;
+    color: #fff;
   }
 }
