@@ -31,13 +31,10 @@ change routes
 
 ## TO.DO.
 
-#### HomePage
-#### Avatar and user info on profile(and in my page)
-#### Add footer
+#### Avatar on profile(and in my page)
 #### Add static page
 #### Added descriptions to album_photo_settings
 #### added back button
-#### added image for slideshow on main page
 
 #### Coments
 ```

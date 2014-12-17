@@ -6,6 +6,6 @@
           .onRight 
             = link_to comment, method: :delete, remote: true do
               i.fi-x
-        b = link_to comment.user.email, profile_path(comment.user) 
+        b = link_to comment.user.name, profile_path(comment.user) 
         br
         = comment.body

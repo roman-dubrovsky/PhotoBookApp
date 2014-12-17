@@ -1,4 +1,13 @@
-h2 My Page
+.onRight.icons
+  = link_to edit_user_registration_path do
+    i.fi-wrench  
+h2 Profile
+b Name: 
+= "  #{current_user.name}"
+br
+b Email: 
+= "  #{current_user.email}"
+
 
 = link_to "New Collection", '#', class: "button success allWidth", 'data-reveal-id' => "createCategory"
 
